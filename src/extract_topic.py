@@ -88,6 +88,10 @@ def getHeader(msg):
 					"Position_x", "Position_y", "Position_z", \
 					"Orientation_x", "Orientation_y", "Orientation_z", "Orientation_w"]
 
+	elif (msgType == '_tuw_vehicle_msgs__Wheelspeeds'):
+		headerRow = ["Time", "Header_sequence", "Header_secs", "Header_nsecs", \
+					"fr", "fl", "rr", "rl"]
+
 	elif (msgType == '_geometry_msgs__PoseWithCovarianceStamped'):
 		headerRow = ["Time", "Header_sequence", "Header_secs", "Header_nsecs", \
 					"Position_x", "Position_y", "Position_z", \
@@ -151,6 +155,9 @@ def getColumns(t, msg, imageFile = ""):
 					msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z, \
 					msg.pose.pose.orientation.x, msg.pose.pose.orientation.y, msg.pose.pose.orientation.z, msg.pose.pose.orientation.w ]
 
+	elif (msgType == '_tuw_vehicle_msgs__Wheelspeeds'):
+		columns = [t, msg.header.seq, msg.header.stamp.secs, msg.header.stamp.nsecs, \
+					msg.fr, msg.fl, msg.rr, msg.rl]
 	elif (msgType == '_geometry_msgs__PoseWithCovarianceStamped'):
 		columns = [t, msg.header.seq, msg.header.stamp.secs, msg.header.stamp.nsecs, \
 					msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z, \
