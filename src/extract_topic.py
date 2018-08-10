@@ -91,6 +91,9 @@ def getHeader(msg):
 	elif (msgType == '_tuw_vehicle_msgs__Wheelspeeds'):
 		headerRow = ["Time", "Header_sequence", "Header_secs", "Header_nsecs", \
 					"fr", "fl", "rr", "rl"]
+	elif (msgType == '_tuw_vehicle_msgs__BatteryState'):
+		headerRow = ["Time", "Header_sequence", "Header_secs", "Header_nsecs", \
+					"current"]
 
 	elif (msgType == '_geometry_msgs__PoseWithCovarianceStamped'):
 		headerRow = ["Time", "Header_sequence", "Header_secs", "Header_nsecs", \
@@ -158,6 +161,9 @@ def getColumns(t, msg, imageFile = ""):
 	elif (msgType == '_tuw_vehicle_msgs__Wheelspeeds'):
 		columns = [t, msg.header.seq, msg.header.stamp.secs, msg.header.stamp.nsecs, \
 					msg.fr, msg.fl, msg.rr, msg.rl]
+	elif (msgType == '_tuw_vehicle_msgs__BatteryState'):
+		columns = [t, msg.header.seq, msg.header.stamp.secs, msg.header.stamp.nsecs, \
+					msg.current]
 	elif (msgType == '_geometry_msgs__PoseWithCovarianceStamped'):
 		columns = [t, msg.header.seq, msg.header.stamp.secs, msg.header.stamp.nsecs, \
 					msg.pose.pose.position.x, msg.pose.pose.position.y, msg.pose.pose.position.z, \

@@ -34,7 +34,7 @@ def usage():
 
 allowedTopics = ['sensor_msgs/Image', 'sensor_msgs/Imu', 'sensor_msgs/LaserScan', 'sensor_msgs/NavSatFix', \
 			'gps_common/GPSFix', 'umrr_driver/radar_msg' , 'nav_msgs/Odometry' , 'geometry_msgs/PoseWithCovarianceStamped',
-			'tuw_vehicle_msgs/Wheelspeeds']
+			'tuw_vehicle_msgs/Wheelspeeds', 'tuw_vehicle_msgs/BatteryState']
 
 def main():
 	rospy.init_node('extract_all', log_level=rospy.DEBUG)
